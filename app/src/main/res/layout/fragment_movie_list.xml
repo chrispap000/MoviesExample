@@ -1,0 +1,74 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.movierama.fragments.MovieListFragment">
+
+    <RelativeLayout
+        android:layout_margin="@dimen/activity_horizontal_margin"
+        android:orientation="horizontal"
+        android:id="@+id/searchLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/searchImage"
+            android:layout_alignParentLeft="true"
+            android:src="@android:drawable/ic_menu_search"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <EditText
+
+            android:hint="@string/movie_list_fragment_search_hint"
+            android:id="@+id/searchEditText"
+            android:layout_toLeftOf="@+id/searchResetImage"
+            android:layout_toRightOf="@+id/searchImage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <ImageView
+            android:id="@+id/searchResetImage"
+            android:layout_alignParentRight="true"
+            android:src="@android:drawable/ic_menu_close_clear_cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_below="@+id/searchLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:visibility="gone"
+            android:id="@+id/noMoviesTextView"
+            android:text="@string/movie_list_fragment_no_movies"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+        <android.support.v4.widget.SwipeRefreshLayout
+
+            android:id="@+id/swipeRefreshLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ListView
+                android:id="@+id/itemsListView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scrollbars="vertical" />
+        </android.support.v4.widget.SwipeRefreshLayout>
+    </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_gravity="center"></ProgressBar>
+
+</RelativeLayout>
