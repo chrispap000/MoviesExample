@@ -1,2 +1,2 @@
 # MoviesExample
-An example of a movie list example
+An example of a movie list using Rotten Tomatoes API
